@@ -8,16 +8,48 @@ namespace Assignment2
     {
         string title;
         string location;
-        DateTime dateTime;
+        DateTime date;
         double price;
 
-        public Concert(string title, string location, double price, DateTime dateTime)
+        public Concert(string title, string location, double price, DateTime date)
         {
             this.title = title;
             this.location = location;
-            this.dateTime = dateTime;
+            this.date = date;
             this.price = price;
+        }
 
+        public override string ToString()
+        {
+            return "Title: " + title + ", Price: " + price + ", Location: " + location + ", Date: " + date.ToString("dd/MM/yyyy H:mm");
+        }
+        public static Concert operator ++(Concert concert)
+        {
+            concert.price += 5;
+            return concert;
+        }
+        public static Concert operator --(Concert concert)
+        {
+            concert.price -= 5;
+            return concert;
+        }
+        public static  Concert operator <(Concert concert, Concert otherConcert)
+        {
+            if(concert.price < otherConcert.price)
+            {
+                Console.WriteLine(concert.title + " costs more than " + otherConcert.title);
+                return null;
+            }
+            else
+            {
+                return concert;
+            }
+            
+        }
+        public static Concert operator >(Concert concert, Concert otherConcert)
+        {
+            concert.price -= 5;
+            return concert;
         }
     }
 }

@@ -9,19 +9,22 @@ namespace Assignment2
         {
             Hashtable table = new Hashtable();
             String title;
+            Concert c;
+            Concert c2;
 
-            title = "title1"; table.Add(title, new Concert(title, "location1", 50, new DateTime(2021, 9, 20, 18, 0 ,0)));
-            title = "title2"; table.Add(title, new Concert(title, "location2", 60, new DateTime(2021, 9, 20, 19, 0, 0)));
-            title = "title3"; table.Add(title, new Concert(title, "location3", 70, new DateTime(2021, 9, 20, 20, 0, 0)));
-            title = "title4"; table.Add(title, new Concert(title, "location4", 80, new DateTime(2021, 9, 20, 21, 0, 0)));
-            title = "title5"; table.Add(title, new Concert(title, "location5", 90, new DateTime(2021, 9, 20, 22, 0, 0)));
+            title = "ZZ Top"; table.Add(title, new Concert(title, "location1", 50, new DateTime(2021, 2, 16, 18, 10, 0)));
+            title = "Tom Waits"; table.Add(title, new Concert(title, "location2", 60, new DateTime(2021, 4, 17, 19, 15, 0)));
+            title = "Ben Caplan"; table.Add(title, new Concert(title, "location3", 70, new DateTime(2021, 6, 18, 20, 20, 0)));
+            title = "AC/DC"; table.Add(title, new Concert(title, "location4", 80, new DateTime(2021, 8, 19, 21, 25, 0)));
+            title = "Dire Straits"; table.Add(title, new Concert(title, "location5", 90, new DateTime(2021, 10, 20, 22, 30, 0)));
 
-            Console.WriteLine(tempDate.ToString("MMMM dd, yyyy"));
+            c = (Concert)table["Ben Caplan"]; c--;
+            c2 = (Concert)table["Tom Waits"]; c2++;
 
 
             foreach (string key in table.Keys)
             {
-                Console.WriteLine(String.Format("{0}: {1}", key, table[key].ToString("MMMM dd, yyyy")));
+                Console.WriteLine(String.Format("{0}", table[key].ToString()));
             }
         }
     }
