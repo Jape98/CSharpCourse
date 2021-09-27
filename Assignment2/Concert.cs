@@ -35,21 +35,31 @@ namespace Assignment2
         }
         public static  Concert operator <(Concert concert, Concert otherConcert)
         {
-            if(concert.price < otherConcert.price)
+            if(concert.price > otherConcert.price)
             {
                 Console.WriteLine(concert.title + " costs more than " + otherConcert.title);
                 return null;
             }
             else
             {
-                return concert;
+                Console.WriteLine(otherConcert.title + " costs more than " + concert.title);
+                return null;
             }
             
         }
         public static Concert operator >(Concert concert, Concert otherConcert)
         {
-            concert.price -= 5;
-            return concert;
+         
+        if(concert.price > otherConcert.price)
+            {
+                Console.WriteLine(concert.title + " costs more than " + otherConcert.title);
+                return null;
+            }
+            else
+            {
+                Console.WriteLine(otherConcert.title + " costs more than " + concert.title);
+                return null;
+            }
         }
     }
 }
