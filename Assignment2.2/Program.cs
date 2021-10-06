@@ -10,10 +10,16 @@ namespace Assignment2._2
     {
         static void Main(string[] args)
         {
-            string text = null;
-            TextAnalyzer rand = new TextAnalyzer(text);
-
+            var letters = new List<string>();
+            TextAnalyzer rand = new TextAnalyzer();
             Console.WriteLine("Random String: " + rand.ToString());
+
+            letters = rand.CountLetters(rand.ToString());
+
+            foreach (var letter in letters)
+            {
+                Console.Write(letter + "\n");
+            }
         }
     }
 }
