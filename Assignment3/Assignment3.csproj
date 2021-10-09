@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CED954DC-9FDC-49A8-864E-63D91ECFFAE3}</ProjectGuid>
+    <ProjectGuid>{51985444-7383-4A38-A653-85115A61F2C3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Assignment3</RootNamespace>
-    <AssemblyName>Assignment3</AssemblyName>
+    <RootNamespace>Assignment3W</RootNamespace>
+    <AssemblyName>Assignment3W</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirlineCompany.cs" />
+    <Compile Include="Flight.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

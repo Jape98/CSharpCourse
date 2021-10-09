@@ -68,7 +68,6 @@ namespace Assignment_I_II
                     }
                 }
             }
-
             return searchResult.ToString();
         }
     }

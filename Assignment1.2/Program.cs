@@ -33,7 +33,7 @@ namespace Assignment_I_II
             Console.WriteLine("Flight id? ");
             id = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Results of searching flighy with id " + id);
+            Console.WriteLine("Results of searching flight with id " + id);
             Console.WriteLine(customerFlightHandler.SearchFlight(id));
 
             Console.WriteLine("Any key to close...");
