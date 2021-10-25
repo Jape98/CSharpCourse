@@ -5,10 +5,10 @@ namespace Assignment4
     class Flight
     {
         double id;
-        string origin;
+        public string origin;
         string destination;
         DateTime date;
-        double price;
+        public double price;
 
         public Flight(double id, string origin, string destination, DateTime date, double price)
         {
@@ -26,7 +26,8 @@ namespace Assignment4
         {
             if (this.id == id)
                 return true;
-            return false;
+            else
+                return false;
         }
     }
 }
