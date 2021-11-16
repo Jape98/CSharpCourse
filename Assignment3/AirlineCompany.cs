@@ -10,7 +10,7 @@ namespace Assignment3
     {
 
         Flight[] flights = new Flight[3];
-        public readonly string name;
+        private readonly string name;
         int nextIndex = 0;
 
         public AirlineCompany()
@@ -21,11 +21,13 @@ namespace Assignment3
             flights[2] = new Flight(300, "Amsterdam", "Nairobi", new DateTime(2021, 10, 4, 19, 0, 0), 1000);
         }
 
+        //indexer
         public Flight this[int i]
         {
             get => flights[i];
             set => flights[i] = value;
         }
+
 
         public Flight FindFlight(double id)
         {

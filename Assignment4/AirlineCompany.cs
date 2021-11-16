@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,36 +7,45 @@ using System.Threading.Tasks;
 
 namespace Assignment4
 {
-    class AirlineCompany
+    public class AirlineCompany
     {
-
-        Flight[] flights = new Flight[3];
-        public readonly string name;
+        List<Flight> flightList = new List<Flight>();
 
         public AirlineCompany()
         {
-            this.name = "KLM Royal Dutch Airlines";
-            flights[0] = new Flight(100, "Vaasa", "Helsinki", new DateTime(2021, 10, 2, 21, 0, 0), 150);
-            flights[1] = new Flight(200, "Helsinki", "Amsterdam", new DateTime(2021, 10, 3, 20, 0, 0), 500);
-            flights[2] = new Flight(300, "Amsterdam", "Nairobi", new DateTime(2021, 10, 4, 19, 0, 0), 1000);
-        }
-
-        public Flight this[int i]
-        {
-            get => flights[i];
-            set => flights[i] = value;
+            flightList.Add(new Flight(100, "Vaasa", "Helsinki", new DateTime(2021, 10, 2, 21, 0, 0), 150));
+            flightList.Add(new Flight(200, "Helsinki", "Amsterdam", new DateTime(2021, 10, 3, 20, 0, 0), 500));
+            flightList.Add(new Flight(300, "Amsterdam", "Nairobi", new DateTime(2021, 10, 4, 19, 0, 0), 1000));
+            flightList.Add(new Flight(400, "Nairobi", "Cape Town", new DateTime(2021, 10, 5, 1, 0, 0), 800));
         }
 
         public Flight FindFlight(double id)
         {
-            for (int i = 0; i < flights.Length; i++)
+            foreach (Flight f in flightList)
             {
-                if (flights[i].CompareId(id))
-                {
-                    return flights[i];
-                }
+                if (f.id == id)
+                    return f;  
             }
             return null;
+        }
+
+        //Here we call a passed-in delegate on each item to process it
+        public void ProcessCheapFlights(ProcessFlightDelegate processItemDelegate, double price)
+        {
+            foreach (Flight f in flightList)
+            {
+                if (f.CheckPrice(price))
+                    processItemDelegate(f);
+            }
+        }
+
+        public static void DisplayItemInfo(Flight item)
+        {
+            Console.WriteLine(item.ToString());
+        }
+        public static void DisplayRoute(Flight item)
+        {
+            Console.WriteLine("From " + item.getOrigin() + " To " + item.getDestination());
         }
     }
 }
