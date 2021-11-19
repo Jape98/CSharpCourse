@@ -10,7 +10,6 @@ namespace Assignment5
         string origin;
         string destination;
         DateTime date;
-        double price;
 
         public Flight(double id, string origin, string destination, DateTime date)
         {
@@ -20,7 +19,7 @@ namespace Assignment5
             this.date = date;
         }
 
-        DateTime getDate() { return this.date; }
+        public DateTime getDate() { return this.date; }
 
         public override string ToString()
         {

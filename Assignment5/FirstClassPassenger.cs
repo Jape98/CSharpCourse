@@ -10,8 +10,8 @@ namespace Assignment5
         double bonus;
         List<string> menu;
 
-        public FirstClassPassenger(double id, string forename, string surname, string phonenumber, double luggageWeight)
-                            : base(id, forename, surname, phonenumber, luggageWeight)
+        public FirstClassPassenger(double id, string forename, string surname, string phonenumber, List<Ticket> ticketList, double luggageWeight)
+                            : base(id, forename, surname, phonenumber, ticketList, luggageWeight)
         {
             menu.Add("Honey and Garlic Roast Duck, Austrian wiener schnitzel");
             menu.Add("Roasted skate wing with charred leeks and samphire, Blueberry financiers");

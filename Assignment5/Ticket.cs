@@ -16,8 +16,23 @@ namespace Assignment5
             this.ticketId = ticketId;
             this.passengerId = passengerId;
             this.ticketId = ticketId;
-            this.price = price;
             this.flight = flight;
+
+            if (flight.getDate().DayOfWeek.Equals(DayOfWeek.Saturday)
+            ||  flight.getDate().DayOfWeek.Equals(DayOfWeek.Sunday))
+            {
+                extraTax = 0.7;
+                this.price = price * extraTax;
+            }
+            else
+            {
+                extraTax = 0.5;
+                this.price = price * extraTax;
+            }
+        }
+        public double GetPrice()
+        {
+            return price;
         }
     }
 }
