@@ -8,9 +8,9 @@ namespace Assignment5
     {
         double luggageWeight;
         public EconomyPassenger(double id, string forename, string surname, string phonenumber, double luggageWeight)
-               :base(id, forename, surname, phonenumber)
+                          :base(id, forename, surname, phonenumber)
         {
-            this.luggageWeight = luggageWeight;
+            luggageWeight = this.luggageWeight;
         }
     }
 }
