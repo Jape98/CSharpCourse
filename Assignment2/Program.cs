@@ -26,7 +26,7 @@ namespace Assignment2
                 Console.WriteLine(String.Format("{0}", table[key].ToString()));
             }
 
-            Console.WriteLine(c < c2);
+            Console.WriteLine("c < c2 ?"+ (c < c2));
         }
     }
 }

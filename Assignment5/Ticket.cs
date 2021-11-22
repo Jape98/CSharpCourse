@@ -21,18 +21,22 @@ namespace Assignment5
             if (flight.getDate().DayOfWeek.Equals(DayOfWeek.Saturday)
             ||  flight.getDate().DayOfWeek.Equals(DayOfWeek.Sunday))
             {
-                extraTax = 0.7;
+                extraTax = 1.07;
                 this.price = price * extraTax;
             }
             else
             {
-                extraTax = 0.5;
+                extraTax = 1.05;
                 this.price = price * extraTax;
             }
         }
         public double GetPrice()
         {
             return price;
+        }
+        override public string ToString()
+        {
+            return "Ticket Id: " + ticketId + ", price: " + price + " eur";
         }
     }
 }

@@ -18,5 +18,20 @@ namespace Assignment5
             this.phonenumber = phonenumber;
             this.ticketList = ticketList;
         }
+        override public string ToString()
+        {
+            StringBuilder str = new StringBuilder();
+            str.AppendFormat("Id:" + id);
+            str.AppendFormat("\nForename: " + forename + ", Surname: " +surname);
+            str.AppendFormat("\nPhone"+phonenumber);
+
+            str.AppendFormat("\nCustomers tickets: ");
+            foreach (Ticket ticket in ticketList)
+            {
+                str.AppendFormat("\n"+ticket.ToString());
+            }
+
+            return str.ToString()+"\n";
+        }
     }
 }

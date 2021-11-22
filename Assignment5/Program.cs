@@ -20,7 +20,7 @@ namespace Assignment5
             flightList.Add(new Flight(300, "Amsterdam", "Nairobi", new DateTime(2021, 11, 14, 19, 0, 0)));
             flightList.Add(new Flight(400, "Nairobi", "Cape Town", new DateTime(2021, 11, 20, 1, 0, 0)));
 
-            pass1tickets.Add(new Ticket(flightList[0], 1, 10, 85));
+            pass1tickets.Add(new Ticket(flightList[0], 1, 10, 90));
             pass1tickets.Add(new Ticket(flightList[1], 1, 20, 300));
             pass1tickets.Add(new Ticket(flightList[2], 1, 30, 800));
             pass1tickets.Add(new Ticket(flightList[3], 1, 40, 150));
@@ -31,6 +31,10 @@ namespace Assignment5
             firstClassCList.Add(new FirstClassPassenger(1, "Biggus", "Dickus", "(+358)44-285-0673", pass1tickets, 100));
             firstClassCList.Add(new FirstClassPassenger(2, "Sillius", "Soddus", "(+358)44-244-5544", pass2tickets, 50));
             economyClassList.Add(new EconomyPassenger(3, "Brian", "Cohen", "(+358)44-244-5544", pass3tickets, 10));
+
+            FirstClassPassenger asdf = new FirstClassPassenger(4, "Biggus", "Dickus", "(+358)44-285-0673", pass1tickets, 100);
+            Console.WriteLine(asdf.ToString());
+
         }
     }
 }

@@ -45,8 +45,6 @@ namespace Assignment4
                 Console.WriteLine("\nFull flight info: ");
                 airlinecompany.ProcessCheapFlights(pid, price);
                 Console.WriteLine(" ");
-
-                Func<int, int, int> MultiplicationFunc = (x, y) => x * y;
             }
         }
     }

@@ -33,33 +33,22 @@ namespace Assignment2
             concert.price -= 5;
             return concert;
         }
-        public static  Concert operator <(Concert concert, Concert otherConcert)
+        public static bool operator <(Concert concert, Concert otherConcert)
         {
-            if(concert.price > otherConcert.price)
+            if (concert.price < otherConcert.price)
             {
-                Console.WriteLine(concert.title + " costs more than " + otherConcert.title);
-                return null;
+                return true;
             }
-            else
-            {
-                Console.WriteLine(otherConcert.title + " costs more than " + concert.title);
-                return null;
-            }
-            
+            return false;
         }
-        public static Concert operator >(Concert concert, Concert otherConcert)
+
+        public static bool operator >(Concert concert, Concert otherConcert)
         {
-         
-        if(concert.price > otherConcert.price)
+            if (concert.price > otherConcert.price)
             {
-                Console.WriteLine(concert.title + " costs more than " + otherConcert.title);
-                return null;
+                return true;
             }
-            else
-            {
-                Console.WriteLine(otherConcert.title + " costs more than " + concert.title);
-                return null;
-            }
+            return false;
         }
     }
 }

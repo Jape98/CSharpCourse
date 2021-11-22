@@ -11,7 +11,7 @@ namespace Assignment3
 
         Flight[] flights = new Flight[3];
         private readonly string name;
-        int nextIndex = 0;
+        //int nextIndex = 0;
 
         public AirlineCompany()
         {
