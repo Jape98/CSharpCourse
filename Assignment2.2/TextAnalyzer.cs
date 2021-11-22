@@ -18,7 +18,7 @@ namespace Assignment2._2
 
             for (var i = 0; i < 50; i++)
             {
-                var c = pool[random.Next(0, pool.Length)];
+                char c = pool[random.Next(0, pool.Length)];
                 builder.Append(c);
             }
             this.text = builder.ToString();
@@ -27,27 +27,30 @@ namespace Assignment2._2
         public List<string> CountLetters(string text)
         {
             // Array to store frequencies.
-            int[] c = new int[(int)char.MaxValue];
+            int[] freq = new int[(int)char.MaxValue];
 
-            var letters = new List<string>();
+            
 
             // Iterate over each character.
             foreach (char t in text)
             {
                 // Increment table.
-                c[(int)t]++;
+                freq[(int)t]++;
             }
 
+            
+
+            List<string> ready = new List<string>();
             // Write all letters found.
             for (int i = 0; i < (int)char.MaxValue; i++)
             {
-                if (c[i] > 0 && char.IsLetterOrDigit((char)i))
+                if (freq[i] > 0 && char.IsLetterOrDigit((char)i))
                 {
-                    string temp = "Letter: " + (char)i + " Frequency: " + c[i];
-                    letters.Add(temp);
+                    string temp = "Letter: " + (char)i + " Frequency: " + freq[i];
+                    ready.Add(temp);
                 }
             }
-            return letters;
+            return ready;
         }
         
         public override string ToString()

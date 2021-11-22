@@ -10,7 +10,7 @@ namespace Assignment2._2
     {
         static void Main(string[] args)
         {
-            var letters = new List<string>();
+            List<string> letters = new List<string>();
             TextAnalyzer rand = new TextAnalyzer();
             Console.WriteLine("Random String: " + rand.ToString());
 

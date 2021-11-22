@@ -10,7 +10,6 @@ namespace Assignment5
             List<Flight> flightList = new List<Flight>();
             List<EconomyPassenger> economyClassList = new List<EconomyPassenger>();
             List<FirstClassPassenger> firstClassCList = new List<FirstClassPassenger>();
-
             List<Ticket> pass1tickets = new List<Ticket>();
             List<Ticket> pass2tickets = new List<Ticket>();
             List<Ticket> pass3tickets = new List<Ticket>();
@@ -25,18 +24,13 @@ namespace Assignment5
             pass1tickets.Add(new Ticket(flightList[1], 1, 20, 300));
             pass1tickets.Add(new Ticket(flightList[2], 1, 30, 800));
             pass1tickets.Add(new Ticket(flightList[3], 1, 40, 150));
-
-            new FirstClassPassenger(11,"Biggus", "Dickus", "(+358)44-285-0673",pass1tickets,100);
-
             pass2tickets.Add(new Ticket(flightList[0], 2, 50, 85));
             pass2tickets.Add(new Ticket(flightList[1], 2, 60, 300));
+            pass3tickets.Add(new Ticket(flightList[0], 3, 70, 300));
 
-            new EconomyPassenger(22,"Sillius", "Soddus", "(+358)44-244-5544", pass2tickets, 50);
-
-            pass3tickets.Add(new Ticket(flightList[0], 3, 70, 85));
-
-            new EconomyPassenger(33, "Brian", "Cohen", "(+358)44-244-5544", pass3tickets, 10);
-
+            firstClassCList.Add(new FirstClassPassenger(1, "Biggus", "Dickus", "(+358)44-285-0673", pass1tickets, 100));
+            firstClassCList.Add(new FirstClassPassenger(2, "Sillius", "Soddus", "(+358)44-244-5544", pass2tickets, 50));
+            economyClassList.Add(new EconomyPassenger(3, "Brian", "Cohen", "(+358)44-244-5544", pass3tickets, 10));
         }
     }
 }
