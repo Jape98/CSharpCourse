@@ -6,7 +6,7 @@ namespace Assignment5
 {
     class Passenger
     {
-        protected double id;
+        double id;
         string forename, surname, phonenumber;
         List<Ticket> ticketList = new List<Ticket>();
 
@@ -18,19 +18,23 @@ namespace Assignment5
             this.phonenumber = phonenumber;
             this.ticketList = ticketList;
         }
-        override public string ToString()
+        public double GetId() { return id; }
+
+        virtual public string GetInfo()
         {
             StringBuilder str = new StringBuilder();
             str.AppendFormat("Id:" + id);
             str.AppendFormat("\nForename: " + forename + ", Surname: " +surname);
             str.AppendFormat("\nPhone"+phonenumber);
-
             str.AppendFormat("\nCustomers tickets: ");
+
             foreach (Ticket ticket in ticketList)
             {
-                str.AppendFormat("\n"+ticket.ToString());
+                if (ticket.GetPassengerId() == id)
+                {
+                    str.AppendFormat("\n" + ticket.ToString()+",");
+                }
             }
-
             return str.ToString()+"\n";
         }
     }

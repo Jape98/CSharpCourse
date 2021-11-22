@@ -7,34 +7,52 @@ namespace Assignment5
     {
         static void Main(string[] args)
         {
-            List<Flight> flightList = new List<Flight>();
-            List<EconomyPassenger> economyClassList = new List<EconomyPassenger>();
-            List<FirstClassPassenger> firstClassCList = new List<FirstClassPassenger>();
-            List<Ticket> pass1tickets = new List<Ticket>();
-            List<Ticket> pass2tickets = new List<Ticket>();
-            List<Ticket> pass3tickets = new List<Ticket>();
+            Lists l = new Lists();
+            List<Ticket> result = new List<Ticket>();
 
-            //Flight: id, origin, destination, date
-            flightList.Add(new Flight(100, "Vaasa", "Helsinki", new DateTime(2021, 11, 2, 21, 0, 0)));
-            flightList.Add(new Flight(200, "Helsinki", "Amsterdam", new DateTime(2021, 11, 8, 20, 0, 0)));
-            flightList.Add(new Flight(300, "Amsterdam", "Nairobi", new DateTime(2021, 11, 14, 19, 0, 0)));
-            flightList.Add(new Flight(400, "Nairobi", "Cape Town", new DateTime(2021, 11, 20, 1, 0, 0)));
+            while (true)
+            {
+                Console.WriteLine("------------------------------------------------------------");
+                Console.WriteLine("Type 1 to search passenger with user ID\n" +
+                              "Type 2 to search ticket with user ID\n" +
+                              "Type 'exit' to exit");
+                string search = Console.ReadLine();
+                result.Clear();
 
-            pass1tickets.Add(new Ticket(flightList[0], 1, 10, 90));
-            pass1tickets.Add(new Ticket(flightList[1], 1, 20, 300));
-            pass1tickets.Add(new Ticket(flightList[2], 1, 30, 800));
-            pass1tickets.Add(new Ticket(flightList[3], 1, 40, 150));
-            pass2tickets.Add(new Ticket(flightList[0], 2, 50, 85));
-            pass2tickets.Add(new Ticket(flightList[1], 2, 60, 300));
-            pass3tickets.Add(new Ticket(flightList[0], 3, 70, 300));
+                switch (search)
+                {
+                    case "1":
+                        Console.WriteLine("\nEnter passenger id >");
+                        double id = double.Parse(Console.ReadLine());
+                        Console.WriteLine("Results for " + l.SearchPassenger(id).GetInfo() + "\n");
 
-            firstClassCList.Add(new FirstClassPassenger(1, "Biggus", "Dickus", "(+358)44-285-0673", pass1tickets, 100));
-            firstClassCList.Add(new FirstClassPassenger(2, "Sillius", "Soddus", "(+358)44-244-5544", pass2tickets, 50));
-            economyClassList.Add(new EconomyPassenger(3, "Brian", "Cohen", "(+358)44-244-5544", pass3tickets, 10));
+                        result = l.SearchTicketByUserId(id);
+                        Console.WriteLine("Passenger " + id + " flight information");
 
-            FirstClassPassenger asdf = new FirstClassPassenger(4, "Biggus", "Dickus", "(+358)44-285-0673", pass1tickets, 100);
-            Console.WriteLine(asdf.ToString());
+                        foreach (Ticket t in result)
+                        {
+                            Console.WriteLine(t.GetFlight().ToString());
+                            //Console.WriteLine();
+                        }
+                    break;
 
+                    case "2":
+                        Console.WriteLine("Enter passenger id > ");
+                        id = double.Parse(Console.ReadLine());
+                        result = l.SearchTicketByUserId(id);
+                        Console.WriteLine("Passenger " + id + " tickets and flight information");
+
+                        foreach (Ticket t in result)
+                        {
+                            Console.WriteLine(t.ToString() +" | "+ t.GetFlight().ToString());
+                        }
+                    break;
+
+                    case "exit":
+                        Environment.Exit(0);
+                    break;
+                }
+            }
         }
     }
 }

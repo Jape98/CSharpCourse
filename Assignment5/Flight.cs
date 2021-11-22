@@ -23,7 +23,7 @@ namespace Assignment5
 
         public override string ToString()
         {
-            return id + " ->" + " | From: " + origin + " | To: " + destination + " | Date: " + date.ToString("dd/MM/yyyy H:mm");
+            return "Flight Id:" + id + " ->" + " | From: " + origin + " | To: " + destination + " | Date: " + date.ToString("dd/MM/yyyy H:mm");
         }
     }
 }

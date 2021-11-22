@@ -7,10 +7,9 @@ namespace Assignment5
     class Ticket
     {
         readonly double extraTax;
-
         double ticketId, passengerId, price;
         Flight flight;
-
+        
         public Ticket(Flight flight, double passengerId, double ticketId, double price)
         {
             this.ticketId = ticketId;
@@ -30,13 +29,14 @@ namespace Assignment5
                 this.price = price * extraTax;
             }
         }
-        public double GetPrice()
-        {
-            return price;
-        }
+
+        public double GetPassengerId() { return passengerId; }
+        public double GetPrice() { return price; }
+        public Flight GetFlight() { return flight; }
+
         override public string ToString()
         {
-            return "Ticket Id: " + ticketId + ", price: " + price + " eur";
+            return "Ticket Id: " + ticketId +" | Passenger Id: "+ passengerId + " | price: " + price + " eur";
         }
     }
 }
