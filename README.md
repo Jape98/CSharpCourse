@@ -1,3 +1,3 @@
 # CSharpCourse
 
-This course was useless.
+This course was chaos.
